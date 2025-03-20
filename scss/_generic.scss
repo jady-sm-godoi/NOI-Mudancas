@@ -1,0 +1,105 @@
+.light {
+    background-color: var(--color-white-full);
+    --generic-tag-background-color: var(--color-success-100);
+    --generic-tag-color: var(--color-success-400);
+    --generic-card-dots-background-color: var(--color-neutral-600);
+    --generic-yellow-btn-background-color: var(--color-secondary-300);
+    --generic-yellow-btn-background-color-hover: var(--color-warning-400);
+    --generic-yellow-btn-color: var(--color-neutral-600);
+    --funcional-neutral-neutral-lightest: var(--color-neutral-100);
+
+}
+
+.dark {
+    background-color: var(--color-black-full);
+    --generic-tag-background-color: var(--color-success-500);
+    --generic-tag-color: var(--color-success-200);
+    --generic-card-dots-background-color: var(--color-neutral-100);
+    --generic-yellow-btn-background-color: var(--color-black-full);
+    --generic-yellow-btn-background-color-hover: var(--color-secondary-300);
+    --generic-yellow-btn-color: var(--color-neutral-100);
+    --funcional-neutral-neutral-lightest: var(--color-black-full);
+
+}
+
+.max-width-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+    .max-width-container {
+        padding: 0 36px;
+        width: fit-content;
+    }
+}
+
+@media (min-width: 1124px) {
+    .max-width-container {
+        padding: 0 24px;
+    }
+}
+
+@media (min-width: 1364px) {
+    .max-width-container {
+        width: 1320px;
+        padding: 0;
+    }
+}
+
+.generic-tag {
+    /*background-color: var(--generic-tag-background-color);*/
+    color: var(--generic-tag-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    max-width: fit-content;
+    padding: 2px 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 140%;
+    border-radius: 999px;
+}
+
+.generic-card-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.generic-card-dots__dots__child {
+    width: 16px;
+    height: 4px;
+    border: none;
+    background-color: var(--generic-card-dots-background-color);
+    opacity: 0.16;
+    border-radius: 99rem;
+    transition: all ease 0.2s;
+}
+
+.generic-card-dots__dots__child__active {
+    background-color: var(--generic-card-dots-background-color);
+    opacity: 1;
+}
+
+.generic-yellow-btn {
+    background-color: var(--generic-yellow-btn-background-color);
+    color: var(--generic-yellow-btn-color);
+    width: fit-content;
+    height: 48px;
+    font-weight: 500;
+    line-height: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+    gap: 8px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.generic-yellow-btn:hover {
+    background-color: var(--generic-yellow-btn-background-color-hover);
+   text-decoration: none;
+}

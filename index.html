@@ -1,52 +1,518 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 
     <title>Mudancas</title>
 
     <style>
         body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-black-full: #000;
+            --color-white-full: #fff;
+
+            /* 	PRIMARY */
+            --color-primary-100: #c2ffca;
+            --color-primary-150: #9cfca7;
+            --color-primary-200: #70ff84;
+            --color-primary-300: #00d61e;
+            --color-primary-400: #00a300;
+            --color-primary-410: #009e0c;
+            --color-primary-500: #006b00;
+            --color-primary-600: #003d00;
+            --color-secondary-100: #fffac2;
+            --color-secondary-200: #fff470;
+            --color-secondary-300: #fbd84b;
+            --color-secondary-400: #c9ad3d;
+            --color-secondary-500: #7c6728;
+            --color-secondary-600: #3e3414;
+
+            /* 	FUNCTIONAL */
+            --color-neutral-90: #f9f9f9;
+            --color-neutral-94: #f1f1f1;
+            --color-neutral-95: #f2f2f2;
+            --color-neutral-100: #f5f5f5;
+            --color-neutral-200: #e0e0e0;
+            --color-neutral-225: #dbdbdb;
+            --color-neutral-230: #d3d3d3;
+            --color-neutral-250: #cccccc;
+            --color-neutral-300: #b8b8b8;
+            --color-neutral-399: #909090;
+            --color-neutral-400: #8f8f8f;
+            --color-neutral-450: #595959;
+            --color-neutral-500: #3d3d3d;
+            --color-neutral-550: #303030;
+            --color-neutral-580: #282828;
+            --color-neutral-600: #1f1f1f;
+            --color-neutral-625: #161616;
+            --color-neutral-630: #141414;
+            --color-neutral-650: #121212;
+            --color-neutral-655: #0e0e0e;
+            --color-success-100: #d9ece3;
+            --color-success-150: #c2ffca;
+            --color-success-200: #72d489;
+            --color-success-300: #34ad51;
+            --color-success-400: #24803a;
+            --color-success-500: #1b602b;
+            --color-success-600: #0e2f16;
+            --color-success-650: #10230D;
+            --color-success-700: #11230E;
+            --color-success-800: #0C1A0A;
+            --color-warning-100: #fffac2;
+            --color-warning-200: #fff470;
+            --color-warning-300: #fbd84b;
+            --color-warning-400: #c9ad3d;
+            --color-warning-500: #7c6728;
+            --color-warning-600: #3e3414;
+            --color-error-100: #fbdcda;
+            --color-error-200: #f5a8a3;
+            --color-error-300: #ea3f34;
+            --color-error-400: #b91e13;
+            --color-error-500: #6f120c;
+            --color-error-600: #370906;
+            --color-information-100: #cce8f5;
+            --color-information-200: #87c9e8;
+            --color-information-300: #65bae1;
+            --color-information-400: #2899cd;
+            --color-information-500: #144c66;
+            --color-information-600: #0a2633;
+
+            /* 	VERTICAL BRANDS */
+            --color-smarthouse-100: #dbf9e7;
+            --color-smarthouse-200: #a5f0c4;
+            --color-smarthouse-300: #4be188;
+            --color-smarthouse-400: #3db46d;
+            --color-smarthouse-500: #2d8752;
+            --color-smarthouse-600: #143d25;
+            --color-entretainment-100: #edf9d0;
+            --color-entretainment-200: #d9f490;
+            --color-entretainment-300: #a5e114;
+            --color-entretainment-400: #8ac111;
+            --color-entretainment-500: #6f9b05;
+            --color-entretainment-600: #2a3b02;
+            --color-finance-100: #deefd1;
+            --color-finance-200: #b1da95;
+            --color-finance-300: #6fb63f;
+            --color-finance-400: #4a792a;
+            --color-finance-500: #2e4c1a;
+            --color-finance-600: #1c2d10;
+            --color-education-100: #cceee8;
+            --color-education-200: #80d5c7;
+            --color-education-300: #2cbfa3;
+            --color-education-400: #04a082;
+            --color-education-500: #006755;
+            --color-education-600: #003d32;
+            --color-health-100: #ffeadb;
+            --color-health-200: #ffcaa6;
+            --color-health-300: #ff954d;
+            --color-health-400: #e27227;
+            --color-health-500: #ad4d0b;
+            --color-health-600: #4d2205;
+            --color-energy-100: #fff1d0;
+            --color-energy-200: #fedc89;
+            --color-energy-300: #fdb913;
+            --color-energy-400: #f4a608;
+            --color-energy-500: #a26402;
+            --color-energy-600: #513201;
+
+            /* 	CHARTS */
+            --color-pink-100: #ffe5fb;
+            --color-pink-200: #ffc2f6;
+            --color-pink-300: #e165d5;
+            --color-pink-400: #cd27bc;
+            --color-pink-500: #891a7d;
+            --color-pink-600: #440d3f;
+            --color-purple-100: #e7dcf9;
+            --color-purple-200: #c3a8f0;
+            --color-purple-300: #9363e3;
+            --color-purple-400: #6525d0;
+            --color-purple-500: #43198b;
+            --color-purple-600: #220c45;
+
+            /* 	Outros */
         }
     </style>
+
 </head>
-<body>
+
+<body class="">
     <section class="banner-hero">
         <div class="banner-hero__img">
-			<div class="banner-hero__img__overlay"></div>
-			<picture>
-				<source srcset="./assets/celular.jpeg" media="(max-width: 620px)" />
-				<source srcset="./assets/tablet.jpeg" media="(max-width: 1124px)" />
-				<img src="./assets/desktop.jpeg" width="1543" height="485" alt="" title=""/>
-			</picture>
-		</div>
+            <div class="banner-hero__img__overlay"></div>
+            <picture>
+                <source srcset="./assets/celular.jpeg" media="(max-width: 620px)" />
+                <source srcset="./assets/tablet.jpeg" media="(max-width: 1124px)" />
+                <img src="./assets/desktop.jpeg" width="1543" height="485" alt="" title="" />
+            </picture>
+        </div>
         <div class="banner-hero__content">
             <div class="banner-hero__content__texts">
                 <h2>Comunicado Oi</h2>
                 <h1>Entenda as mudanças na Oi</h1>
-                <p>O futuro da Oi permanece pautado por um firme compromisso com seus clientes e com a oferta de soluções cada vez mais completas e inovadoras de TI e conectividade.</p>
+                <p>O futuro da Oi permanece pautado por um firme compromisso com seus clientes e com a oferta de
+                    soluções cada vez mais completas e inovadoras de TI e conectividade.</p>
             </div>
             <div class="banner-hero__content__btns">
                 <a href="" class="leia-mais">
                     <span>Leia mais</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 18.6899V3.5C11.25 3.09 11.59 2.75 12 2.75C12.41 2.75 12.75 3.09 12.75 3.5V18.6901L17.5401 13.9C17.8301 13.61 18.3101 13.61 18.6001 13.9C18.8901 14.19 18.8901 14.67 18.6001 14.96L12.5301 21.03C12.3801 21.18 12.1901 21.25 12.0001 21.25C11.8101 21.25 11.6201 21.18 11.4701 21.03L5.40012 14.96C5.11012 14.67 5.11012 14.19 5.40012 13.9C5.69012 13.61 6.17012 13.61 6.46012 13.9L11.25 18.6899Z" fill="#1F1F1F"/>
-                      </svg>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.25 18.6899V3.5C11.25 3.09 11.59 2.75 12 2.75C12.41 2.75 12.75 3.09 12.75 3.5V18.6901L17.5401 13.9C17.8301 13.61 18.3101 13.61 18.6001 13.9C18.8901 14.19 18.8901 14.67 18.6001 14.96L12.5301 21.03C12.3801 21.18 12.1901 21.25 12.0001 21.25C11.8101 21.25 11.6201 21.18 11.4701 21.03L5.40012 14.96C5.11012 14.67 5.11012 14.19 5.40012 13.9C5.69012 13.61 6.17012 13.61 6.46012 13.9L11.25 18.6899Z"
+                            fill="#1F1F1F" />
+                    </svg>
                 </a>
                 <a href="" class="migracao">
                     <span>Migração cliente fibra</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 18.6899V3.5C11.25 3.09 11.59 2.75 12 2.75C12.41 2.75 12.75 3.09 12.75 3.5V18.6901L17.5401 13.9C17.8301 13.61 18.3101 13.61 18.6001 13.9C18.8901 14.19 18.8901 14.67 18.6001 14.96L12.5301 21.03C12.3801 21.18 12.1901 21.25 12.0001 21.25C11.8101 21.25 11.6201 21.18 11.4701 21.03L5.40012 14.96C5.11012 14.67 5.11012 14.19 5.40012 13.9C5.69012 13.61 6.17012 13.61 6.46012 13.9L11.25 18.6899Z" fill="#E0E0E0"/>
-                      </svg>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.25 18.6899V3.5C11.25 3.09 11.59 2.75 12 2.75C12.41 2.75 12.75 3.09 12.75 3.5V18.6901L17.5401 13.9C17.8301 13.61 18.3101 13.61 18.6001 13.9C18.8901 14.19 18.8901 14.67 18.6001 14.96L12.5301 21.03C12.3801 21.18 12.1901 21.25 12.0001 21.25C11.8101 21.25 11.6201 21.18 11.4701 21.03L5.40012 14.96C5.11012 14.67 5.11012 14.19 5.40012 13.9C5.69012 13.61 6.17012 13.61 6.46012 13.9L11.25 18.6899Z"
+                            fill="#E0E0E0" />
+                    </svg>
                 </a>
             </div>
         </div>
     </section>
+    <section class="text-image-tab-left">
+        <div class="text-image-tab-left__nav-tabs max-width-container" style="width: fit-content;"><!-- Item 1 -->
+            <div class="text-image-tab-left__nav-tabs__image-paragraph" style="width: fit-content;">
+                <!-- images laterais -->
+                <picture class="text-image-tab-left__nav-tabs__image-paragraph__image">
+                    <source height="300" media="(min-width: 1124px)" srcset="./assets/section2.png" />
+                    <img alt="" class="text-image-tab-left__nav-tabs__image-paragraph__image__mobile" loading="lazy"
+                        src="./assets/section2.png" title="" style="width: 100%; height: auto; object-fit: cover;" />
+                </picture>
+                <!-- Paragrafos -->
+                <div class="text-image-tab-left__nav-tabs__image-paragraph__paragraph" style="gap: 24px;">
+                    <small class="entenda-mudancas-small">Entenda as mudanças na Oi</small>
+                    <h2 class="text-image-tab-left__nav-tabs__image-paragraph__paragraph__title__b"> A Oi continua
+                        presente no seu dia-a-dia, focando na transformação digital, inovação e tecnologia</h2>
+
+                    <p class="text-image-tab-left__nav-tabs__image-paragraph__paragraph__text">A Oi está passando por um
+                        período de transformação. Após o fim da concessão de telefonia fixa e a venda da operação de
+                        banda larga em fibra óptica, a companhia passa a focar sua atuação na oferta de soluções de
+                        tecnologia e conectividade para o mercado corporativo por meio da Oi Soluções.</p>
+
+                    <p class="text-image-tab-left__nav-tabs__image-paragraph__paragraph__text">A Oi Soluções está
+                        presente em 43 mil das maiores empresas públicas e privadas do país, dos mais variados setores e
+                        segmentos, oferecendo um robusto portfólio de soluções de tecnologia para os serviços de Redes
+                        Gerenciadas, Segurança, Cloud, UC&C (Unified Communications and Collaboration), IA, Big Data &
+                        Analytics, Aplicações Digitais e Observabilidade, além de dados, internet e voz via fibra ótica.
+                    </p>
+
+                    <p class="text-image-tab-left__nav-tabs__image-paragraph__paragraph__text">Continuamos também
+                        oferecendo o serviço de TV por satélite e telefonia fixa nas localidades onde não há uma
+                        alternativa de serviço de voz, seguindo as obrigações regulatórias da Agência Nacional de
+                        Telecomunicações (Anatel).</p>
+                </div>
+                <!-- Fim Paragrafos -->
+            </div>
+            <!-- Fim Item 1 -->
+        </div>
+    </section>
+    <section class="inner-banner-main" style="display: none;">
+        <div class="inner-banner-main__main max-width-container">
+            <div class="inner-banner-main__main__links-container">
+                <div class="inner-banner-main__main__links-container__description">
+
+                    <h2 class="inner-banner-main__main__links-container__description__title">O que continua na Oi?</h2>
+
+                    <p class="inner-banner-main__main__links-container__description__paragraph">A Oi segue com um
+                        portfólio completo de soluções digitais que podem ser customizadas para grandes empresas
+                        públicas ou privadas.</p>
+                    <p class="inner-banner-main__main__links-container__description__paragraph">Confira ao lado os
+                        produtos que vão continuar:</p>
+                </div>
+
+                <!-- versão mobile -->
+                <div class="inner-banner-main__main__links-container__mobile">
+                    <a class="inner-banner-main__main__links-container__mobile__anchor"
+                        href="https://www.oi.com.br/grandes-empresas/">
+
+                        <h3>Oi Soluções</h3>
+                        <p>Soluções digitais para o mercado corporativo</p>
+                        <svg class="inner-banner-main__main__links-container__mobile__anchor__chevron" fill="none"
+                            height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M15.0555 11.911C15.5436 12.3992 15.5436 13.1906 15.0555 13.6788L7.46967 21.2646C7.17678 21.5575 7.17678 22.0324 7.46967 22.3253C7.76256 22.6181 8.23744 22.6181 8.53033 22.3253L16.1161 14.7395C17.1901 13.6655 17.1901 11.9243 16.1161 10.8504L8.53033 3.26459C8.23744 2.9717 7.76256 2.9717 7.46967 3.26459C7.17678 3.55748 7.17678 4.03236 7.46967 4.32525L15.0555 11.911Z"
+                                fill="#00A300" fill-rule="evenodd"></path>
+                            <title></title>
+                        </svg>
+                    </a>
+                    <a class="inner-banner-main__main__links-container__mobile__anchor"
+                        href="https://www.oi.com.br/fixo/">
+
+                        <h3>Oi Fixo</h3>
+                        <p>Telefonia fixa nas localidades com obrigação regulatória</p>
+                        <svg class="inner-banner-main__main__links-container__mobile__anchor__chevron" fill="none"
+                            height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M15.0555 11.911C15.5436 12.3992 15.5436 13.1906 15.0555 13.6788L7.46967 21.2646C7.17678 21.5575 7.17678 22.0324 7.46967 22.3253C7.76256 22.6181 8.23744 22.6181 8.53033 22.3253L16.1161 14.7395C17.1901 13.6655 17.1901 11.9243 16.1161 10.8504L8.53033 3.26459C8.23744 2.9717 7.76256 2.9717 7.46967 3.26459C7.17678 3.55748 7.17678 4.03236 7.46967 4.32525L15.0555 11.911Z"
+                                fill="#00A300" fill-rule="evenodd"></path>
+                            <title></title>
+                        </svg>
+                    </a>
+                    <a class="inner-banner-main__main__links-container__mobile__anchor"
+                        href="https://www.oi.com.br/tv-hd/oi-tv-livre/">
+
+                        <h3>Oi TV</h3>
+                        <p>TV por assinatura via satélite</p>
+                        <svg class="inner-banner-main__main__links-container__mobile__anchor__chevron" fill="none"
+                            height="25" viewbox="0 0 25 25" width="25" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd"
+                                d="M15.0555 11.911C15.5436 12.3992 15.5436 13.1906 15.0555 13.6788L7.46967 21.2646C7.17678 21.5575 7.17678 22.0324 7.46967 22.3253C7.76256 22.6181 8.23744 22.6181 8.53033 22.3253L16.1161 14.7395C17.1901 13.6655 17.1901 11.9243 16.1161 10.8504L8.53033 3.26459C8.23744 2.9717 7.76256 2.9717 7.46967 3.26459C7.17678 3.55748 7.17678 4.03236 7.46967 4.32525L15.0555 11.911Z"
+                                fill="#00A300" fill-rule="evenodd"></path>
+                            <title></title>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="inner-banner-main__main__links-container__desktop">
+                    <div class="inner-banner-main__main__links-container__desktop__link">
+
+                        <h3 class="inner-banner-main__main__links-container__desktop__link__title">Oi Soluções</h3>
+                        <p>Soluções digitais para o mercado corporativo</p>
+                        <a class="inner-banner-main__main__links-container__desktop__link__anchor"
+                            href="https://www.oi.com.br/grandes-empresas/">
+                            Conheça
+                            <svg fill="none" height="25" viewbox="0 0 24 25" width="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M13.9001 19.3949C14.0501 19.5449 14.2401 19.6149 14.4301 19.6149C14.6201 19.6149 14.8101 19.5449 14.9601 19.3949L21.0301 13.3249C21.3201 13.0349 21.3201 12.5549 21.0301 12.2649L14.9601 6.19492C14.6701 5.90492 14.1901 5.90492 13.9001 6.19492C13.6101 6.48492 13.6101 6.96492 13.9001 7.25492L18.6901 12.0449H3.5C3.09 12.0449 2.75 12.3849 2.75 12.7949C2.75 13.2049 3.09 13.5449 3.5 13.5449H18.6901L13.9001 18.3349C13.6101 18.6249 13.6101 19.1049 13.9001 19.3949Z"
+                                    fill="#fff" fill-rule="evenodd"></path>
+                            </svg> </a>
+                    </div>
+
+                    <div class="inner-banner-main__main__links-container__desktop__link">
+
+                        <h3 class="inner-banner-main__main__links-container__desktop__link__title">Oi Fixo</h3>
+                        <p>Telefonia fixa nas localidades com obrigação regulatória</p>
+                        <a class="inner-banner-main__main__links-container__desktop__link__anchor"
+                            href="https://www.oi.com.br/fixo/">
+                            Entenda
+                            <svg fill="none" height="25" viewbox="0 0 24 25" width="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M13.9001 19.3949C14.0501 19.5449 14.2401 19.6149 14.4301 19.6149C14.6201 19.6149 14.8101 19.5449 14.9601 19.3949L21.0301 13.3249C21.3201 13.0349 21.3201 12.5549 21.0301 12.2649L14.9601 6.19492C14.6701 5.90492 14.1901 5.90492 13.9001 6.19492C13.6101 6.48492 13.6101 6.96492 13.9001 7.25492L18.6901 12.0449H3.5C3.09 12.0449 2.75 12.3849 2.75 12.7949C2.75 13.2049 3.09 13.5449 3.5 13.5449H18.6901L13.9001 18.3349C13.6101 18.6249 13.6101 19.1049 13.9001 19.3949Z"
+                                    fill="#fff" fill-rule="evenodd"></path>
+                            </svg> </a>
+                    </div>
+
+                    <div class="inner-banner-main__main__links-container__desktop__link">
+
+                        <h3 class="inner-banner-main__main__links-container__desktop__link__title">Oi TV</h3>
+                        <p>TV por assinatura via satélite</p>
+                        <a class="inner-banner-main__main__links-container__desktop__link__anchor"
+                            href="https://www.oi.com.br/tv-hd/oi-tv-livre/">
+                            Solicite
+                            <svg fill="none" height="25" viewbox="0 0 24 25" width="24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M13.9001 19.3949C14.0501 19.5449 14.2401 19.6149 14.4301 19.6149C14.6201 19.6149 14.8101 19.5449 14.9601 19.3949L21.0301 13.3249C21.3201 13.0349 21.3201 12.5549 21.0301 12.2649L14.9601 6.19492C14.6701 5.90492 14.1901 5.90492 13.9001 6.19492C13.6101 6.48492 13.6101 6.96492 13.9001 7.25492L18.6901 12.0449H3.5C3.09 12.0449 2.75 12.3849 2.75 12.7949C2.75 13.2049 3.09 13.5449 3.5 13.5449H18.6901L13.9001 18.3349C13.6101 18.6249 13.6101 19.1049 13.9001 19.3949Z"
+                                    fill="#fff" fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="nio-component">
+        <div class="nio-component__content">
+            <div class="nio-component__content__text">
+                <h2>Para clientes <b>Oi Fibra</b></h2>
+                <p>Agora você é cliente Nio Fibra. Vem conhecer a sua nova internet.</p>
+                <a href="">
+                    <span>Conhecer a Nio</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.9001 18.6C14.0501 18.75 14.2401 18.82 14.4301 18.82C14.6201 18.82 14.8101 18.75 14.9601 18.6L21.0301 12.53C21.3201 12.24 21.3201 11.76 21.0301 11.47L14.9601 5.4C14.6701 5.11 14.1901 5.11 13.9001 5.4C13.6101 5.69 13.6101 6.17 13.9001 6.46L18.6901 11.25H3.5C3.09 11.25 2.75 11.59 2.75 12C2.75 12.41 3.09 12.75 3.5 12.75H18.6901L13.9001 17.54C13.6101 17.83 13.6101 18.31 13.9001 18.6Z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </div>
+            <div class="nio-component__content__box">
+                <div class="nio-component__content__box__text">
+                    <h3>Quer gerenciar seu plano?</h3>
+                    <p>Baixe a 2º via da conta da internet e do telefone fixo, peça suporte técnico e muito mais no
+                        aplicativo Nio ou na área do cliente.</p>
+                    <a href="">Baixar o app da Nio</a>
+                    <a href="">Acessar área do cliente </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="max-width-container section" id="section-faq">
+        <div class="faq" id="oi-tv-por-Lorem ipsum-fibra-otica">
+            <div class="faq__title">
+                <svg aria-label="Interrogação" class="faq__title__question-icon" fill="none"
+                    height="41" viewbox="0 0 40 41" width="40" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                        d="M19.9997 36.6004C29.0664 36.6004 36.4163 29.2504 36.4163 20.1838C36.4163 11.1171 29.0664 3.76709 19.9997 3.76709C10.933 3.76709 3.58301 11.1171 3.58301 20.1838C3.58301 29.2504 10.933 36.6004 19.9997 36.6004ZM19.9997 38.1004C29.8948 38.1004 37.9163 30.0789 37.9163 20.1838C37.9163 10.2887 29.8948 2.26709 19.9997 2.26709C10.1046 2.26709 2.08301 10.2887 2.08301 20.1838C2.08301 30.0789 10.1046 38.1004 19.9997 38.1004ZM20.0255 14.6484C18.9292 14.6484 17.8925 15.6279 17.8925 17.0251C17.8925 17.7319 17.3196 18.3049 16.6128 18.3049C15.906 18.3049 15.333 17.7319 15.333 17.0251C15.333 14.3835 17.3522 12.0889 20.0255 12.0889C22.6988 12.0889 24.7179 14.3835 24.7179 17.0251C24.7179 18.3346 24.2313 19.5393 23.4216 20.4323C23.0919 20.7959 22.7465 21.0878 22.4544 21.3249C22.375 21.3894 22.3021 21.4479 22.2344 21.5022C22.0325 21.6643 21.8765 21.7895 21.7285 21.9276C21.4051 22.2293 21.3052 22.4197 21.3052 22.7535C21.3052 23.4603 20.7323 24.0333 20.0255 24.0333C19.3187 24.0333 18.7457 23.4603 18.7457 22.7535C18.7457 21.4719 19.3446 20.6512 19.9825 20.056C20.2073 19.8464 20.4644 19.6402 20.6815 19.4662L20.6816 19.4662L20.6816 19.4662C20.7379 19.4211 20.7915 19.3781 20.8411 19.3378C21.1066 19.1223 21.3298 18.9288 21.5254 18.713C21.9098 18.2891 22.1584 17.6967 22.1584 17.0251C22.1584 15.6279 21.1217 14.6484 20.0255 14.6484ZM20.0317 25.1838C19.0935 25.1838 18.333 25.9477 18.333 26.8901C18.333 27.8325 19.0935 28.5965 20.0317 28.5965H20.047C20.9852 28.5965 21.7457 27.8325 21.7457 26.8901C21.7457 25.9477 20.9852 25.1838 20.047 25.1838H20.0317Z"
+                        fill-rule="evenodd"></path>
+                </svg>
+                <h2 class="faq__title__text">Tire suas dúvidas sobre as mudanças da Oi</h2>
+            </div>
+
+            <div class="faq__container">
+                <div class="faq__container__main" id="faq-main">
+                    <details class="faq__container__main__item" >
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">A Oi vai continuar operando? </h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">Sim. A Oi focará sua atuação no mercado corporativo por meio da Oi Soluções, além de manter a operação de telefonia fixa nas localidades em que tem obrigação regulatória.<a href=""> </a></p>
+                        </div>
+                    </details>
+
+                    <details class="faq__container__main__item">
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">Sou cliente Oi Fibra. <br>O que acontecerá com o serviço? Eu devo fazer alguma coisa para mantê-lo?</h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">Os clientes Oi Fibra serão automaticamente migrados para a empresa Nio, com o mesmo plano. Não é necessário nenhum tipo de ação. <a href=""> </a></p>
+                        </div>
+                    </details>
+
+                    <details class="faq__container__main__item">
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">Meu contrato Oi Fibra será mantido ou terei que assinar um novo com a Nio?</h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">O contrato será mantido. Clientes Oi Fibra não vão precisar assinar um novo vínculo com a Nio. O processo de transição entre as marcas não implicará nenhuma mudança para os clientes. Portanto, os contratos da Oi Fibra permanecem válidos em todos os aspectos.<a href=""> </a></p>
+                        </div>
+                    </details>
+
+                    <details class="faq__container__main__item">
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">Quero contratar Oi Fibra. Ainda é possível?</h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">Sim. A Oi Fibra ainda pode ser contratada e em breve todos os clientes da Oi Fibra se tornarão automaticamente clientes da Nio.<a href=""> </a></p>
+                        </div>
+                    </details>
+
+                    <details class="faq__container__main__item">
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">Por que a Oi Fibra virou Nio?</h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">Na verdade, a Oi Fibra não virou a Nio. Como parte do processo de recuperação judicial da Oi, os clientes da Oi Fibra foram transferidos para uma nova empresa, a Nio, que não tem qualquer ligação com a Oi.<a href=""> </a></p>
+                        </div>
+                    </details>
+
+                    <details class="faq__container__main__item">
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">O telefone fixo da Oi vai acabar?</h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">Não, mas algumas mudanças aconteceram. Antes, a Oi oferecia o serviço como uma concessão, o que atraia regras mais rígidas, como a obrigação de atender em várias localidades do Brasil. Agora a companhia atua no modelo de autorização e tem a obrigação de prestar telefonia fixa apenas nas localidades onde não há alternativas de serviços de voz. Saiba mais em: <br>
+                                <a href="https://www.gov.br/anatel/pt-br/assuntos/adaptacao/adaptacao-da-oi/perguntas-e-respostas"> https://www.gov.br/anatel/pt-br/assuntos/adaptacao/adaptacao-da-oi/perguntas-e-respostas </a>
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq__container__main__item">
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">O que faz a Oi Soluções?</h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">A Oi Soluções oferece soluções integradas de TI e telecom, por meio de um robusto portfólio de segurança, cloud, UC&C (Unified Communications and Collaboration), IoT, Big Data, Aplicações Digitais e Observabilidade, além de dados, internet e voz via fibra ótica. <a href=""> </a></p>
+                        </div>
+                    </details>
+
+                    <details class="faq__container__main__item">
+                        <summary class="faq__container__main__item__question">
+                            <h3 class="faq__container__main__item__question__title">O que acontece com meus dados pessoais?</h3>
+                            <svg class="faq__arrow" fill="none" height="25" viewbox="0 0 25 25" width="25"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd"
+                                    d="M10.5695 16.9694C11.0995 17.4994 11.7995 17.7694 12.4995 17.7694C13.1995 17.7694 13.8995 17.4994 14.4295 16.9694L20.9495 10.4494C21.2395 10.1594 21.2395 9.67937 20.9495 9.38938C20.6595 9.09938 20.1795 9.09938 19.8895 9.38938L13.3695 15.9094C12.8895 16.3894 12.1095 16.3894 11.6295 15.9094L5.10953 9.38938C4.81953 9.09938 4.33953 9.09938 4.04953 9.38938C3.75953 9.67937 3.75953 10.1594 4.04953 10.4494L10.5695 16.9694Z"
+                                    fill="#F5F5F5" fill-rule="evenodd"></path>
+                            </svg>
+                        </summary>
+
+                        <div class="faq__container__main__item__answer">
+                            <p class="faq__container__main__item__answer__text">Com a venda da Oi Fibra, a Nio assumiu todos os contratos ativos dos clientes.<a href=""> </a>
+                            </p>
+                            <p class="faq__container__main__item__answer__text">Não se preocupe: a migração das informações ocorreu respeitando todos os protocolos de segurança da Oi. A partir de agora, qualquer solicitação relacionada à Lei Geral de Proteção de Dados Pessoais-LGPD deve ser direcionada para a Nio.<a href=""> </a>
+                            </p>
+                            <p class="faq__container__main__item__answer__text">Caso você seja um ex-cliente fibra, esclarecemos que a Oi precisa manter alguns dados sobre seu contrato devido às normas de prescrição do direito brasileiro, que exigem a conservação de determinadas informações para o cumprimento de obrigações legais e regulatórias. Para saber mais confira o Aviso de Privacidade da Oi.<a href=""> </a>
+                            </p>
+                            <p class="faq__container__main__item__answer__text">Observação: se você é um ex-cliente fibra e pretende contratar os serviços da Nio, informações sobre seu contrato inativo podem ser utilizadas como subsídio para o processo de contratação. Para mais informações, entre em contato com os canais de privacidade da Nio.<a href=""> </a>
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll(".faq__container__main__item__question").forEach(summary => {
+            summary.addEventListener("click", function () {
+                const svg = this.querySelector(".faq__arrow");
+                svg.classList.toggle("rotated");
+            });
+        });
+    </script>
+
 </body>
+
 </html>

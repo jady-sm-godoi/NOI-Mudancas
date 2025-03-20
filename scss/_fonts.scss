@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+@media all and (min-resolution: 0.001dpcm) {
+	// Simplon BP Font Family
+@font-face {
+	font-family: 'Simplon BP';
+	src: url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Light.woff2) format('woff2'),
+		 url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Light.woff) format('woff'),
+		 url(../assets/fonts/Simplon-BP/TTF/SimplonBP-Light.ttf) format('truetype');
+	font-weight: 300;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Simplon BP';
+	src: url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Regular.woff2) format('woff2'),
+		 url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Regular.woff) format('woff'),
+		 url(../assets/fonts/Simplon-BP/TTF/SimplonBP-Regular.ttf) format('truetype');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Simplon BP';
+	src: url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Medium.woff2) format('woff2'),
+		 url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Medium.woff) format('woff'),
+		 url(../assets/fonts/Simplon-BP/TTF/SimplonBP-Medium.ttf) format('truetype');
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Simplon BP';
+	src: url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Bold.woff2) format('woff2'),
+		 url(../assets/fonts/Simplon-BP/WOFF/SimplonBP-Bold.woff) format('woff'),
+		 url(../assets/fonts/Simplon-BP/TTF/SimplonBP-Bold.ttf) format('truetype');
+	font-weight: 700;
+	font-display: swap;
+}
+
+// SimplonOi Font Family
+@font-face {
+	font-family: 'simplonoi-2018';
+	src: url(../assets/fonts/SimplonOi-2018.woff2) format('woff2'),
+	url(../assets/fonts/SimplonOi-2018.otf) format('opentype');
+	font-display: swap;
+}
+
+}
