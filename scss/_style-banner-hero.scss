@@ -195,6 +195,10 @@
                 border-radius: 999px;
                 background: var(--Functional-Neutral-Lightest, #F5F5F5);
 
+                &:hover{
+                    background: var(--color-neutral-200, #e0e0e0);
+                }
+
                 @media screen and (max-width: 620px) {
                     width: 100%;
                     max-width: 240px;
@@ -229,6 +233,10 @@
 
                 border-radius: 999px;
                 border: 1px solid var(--Functional-Neutral-Light, #E0E0E0);
+
+                &:hover{
+                    border: 2px solid var(--Functional-Neutral-Light, #E0E0E0);;
+                }
 
                 @media screen and (max-width: 620px) {
                     width: 100%;
