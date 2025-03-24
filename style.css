@@ -137,7 +137,7 @@ body.dark .banner-hero__img picture img {
 }
 .banner-hero__content__texts p {
   margin: 0;
-  color: var(--funcional-neutral-neutral-lightest, #F5F5F5);
+  color: var(--Functional-Neutral-Lightest, #F5F5F5);
   /* Paragraph/Regular */
   font-family: "Simplon BP";
   font-size: 16px;
@@ -410,6 +410,9 @@ body.dark .banner-hero__img picture img {
   gap: 60px;
   width: 100%;
 }
+body.dark .inner-banner-main {
+  background: #000;
+}
 
 .inner-banner-main__main {
   display: flex;
@@ -587,6 +590,9 @@ body.dark .banner-hero__img picture img {
   .inner-banner-main {
     background: var(--funcional-neutral-neutral-lightest, #F5F5F5);
   }
+  body.dark .inner-banner-main {
+    background: #000;
+  }
   .inner-banner-main__main {
     gap: 60px;
   }
@@ -701,7 +707,6 @@ body.dark .banner-hero__img picture img {
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
   }
   .inner-banner-main__main__links-container__desktop__link {
@@ -737,6 +742,12 @@ body.dark .banner-hero__img picture img {
     line-height: 150%;
     text-decoration: none;
     border-radius: 999px;
+  }
+  body.dark .inner-banner-main__main__links-container__desktop__link__anchor {
+    color: #000;
+  }
+  body.dark .inner-banner-main__main__links-container__desktop__link__anchor svg path {
+    fill: #000;
   }
   .inner-banner-main__main__links-container__desktop__link__anchor:hover {
     background-color: var(--inner-banner-main-desktop-anchor-hover);
@@ -1230,7 +1241,7 @@ a {
   --generic-yellow-btn-background-color: var(--color-black-full);
   --generic-yellow-btn-background-color-hover: var(--color-secondary-300);
   --generic-yellow-btn-color: var(--color-neutral-100);
-  --funcional-neutral-neutral-lightest: var(--color-black-full);
+  --funcional-neutral-neutral-lightest: var(--color-neutral-600);
 }
 
 .max-width-container {
